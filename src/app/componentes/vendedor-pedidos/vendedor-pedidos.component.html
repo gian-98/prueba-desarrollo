@@ -1,0 +1,42 @@
+<div class="col-12">
+  <div class="card text-center">
+    <div class="card-header">
+      Pedidos Realizados
+    </div>
+    <img src="assets/empleado.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">Resultado Por Cada Vendedor en los días
+        <br>
+        04/12/2016, 11/12/2016, 18/12/2016
+      </p>
+      <h5 class="card-title">Seleccione un vendedor</h5>
+      <select class="form-control form-control-sm" [(ngModel)]="seleccionado" (change)="onChange()">
+        <option [value]="item" *ngFor="let item of code_vendedores">{{item}}</option>
+      </select>
+      <br>
+      <div>
+        <table class="table table-sm table-borderless">
+          <thead class="header">
+            <tr>
+              <th scope="col"> FECHA </th>
+              <th scope="col"> VISITAS </th>
+              <th scope="col"> PEDIDOS </th>
+              <th scope="col"> NO VENTAS </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of vendedor_sel">
+              <td> {{item.visits_date}} </td>
+              <td> {{item.visits_amount}} </td>
+              <td> {{item.orders_amount}} </td>
+              <td> {{item.visits_without_sale_amount}} </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      <img src="assets/mundo.png" class="imagen" alt="...">
+    </div>
+  </div>
+</div>
